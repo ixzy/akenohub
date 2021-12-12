@@ -349,11 +349,6 @@ if 1 == 1 then--dont delete this -- ok
         -- CREDITS
         local credits = Window:NewTab("Credits")
         local creds = credits:NewSection("Credits")
-        creds:NewButton("Copy discord invite","copies discord invite",
-        function(v)
-            setclipboard("https://discord.gg/Aw7JCXewVS")
-        end
-    )
     creds:NewButton("Owner: Santa"," copies santa's tag",
     function(Owner)
         setclipboard("Santa#0800")
@@ -365,6 +360,11 @@ if 1 == 1 then--dont delete this -- ok
     creds:NewButton("Developer: BlueRock","Copies BlueRock's tag",
     function(v)
     setclipboard("BLUE ROCK#3750")
+    end
+)
+    creds:NewButton("Copy discord invite","copies discord invite",
+    function(v)
+    setclipboard("https://discord.gg/Aw7JCXewVS")
     end
 )
 
