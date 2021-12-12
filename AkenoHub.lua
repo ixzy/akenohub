@@ -1,9 +1,9 @@
-if 1 == 1 then--dont delete this -- ok -- lets go over here follow me ight
+if 1 == 1 then--dont delete this -- ok 
     local ixzy = "Have Fun!!!!"
     game:GetService("StarterGui"):SetCore(
         "SendNotification",
         {
-            Title = "ixzy",
+            Title = "Akeno Hub",
             Text = ixzy
         }
     )
@@ -81,6 +81,11 @@ if 1 == 1 then--dont delete this -- ok -- lets go over here follow me ight
                 setclipboard("https://discord.gg/Aw7JCXewVS")
             end
         )
+        creds:NewButton("Scripter: BlueRock","Copies BlueRock's tag",
+             function(v)
+                setclipboard("BLUE ROCK#3750")
+            end
+        )
     end
 
     if game.PlaceId == 3956818381 then--ninja legends
@@ -112,7 +117,7 @@ if 1 == 1 then--dont delete this -- ok -- lets go over here follow me ight
                     local A_1 = "swingKatana"
                     local Event = game:GetService("Players").LocalPlayer.ninjaEvent
                     Event:FireServer(A_1)
-                    wait(0.1)
+                    wait(0.5)
                 end
             end
         )
@@ -121,29 +126,17 @@ if 1 == 1 then--dont delete this -- ok -- lets go over here follow me ight
             function(v)
                 getgenv().autosell = v
                 while true do
-                    if getgenv().autoswing == false then
+                    if getgenv().autosell == false then
                         return
                     end
-                    game:GetService("Workspace").sellAreaCircles["sellAreaCircle16"].circleInner.CFrame =
-                        game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame
+                    game:GetService("Workspace").sellAreaCircles["sellAreaCircle16"].circleInner.CFrame = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame
                     wait(0.1)
-                    game:GetService("Workspace").sellAreaCircles["sellAreaCircle16"].circleInner.CFrame =
-                        CFrame.new(0, 0, 0)
-                    wait(0.1)
+                    game:GetService("Workspace").sellAreaCircles["sellAreaCircle16"].circleInner.CFrame = CFrame.new(0, 0, 0)
+                    wait(0.5)
                 end
             end
         )
 
-        MainSection:NewButton("Unlock all islands","Unlocks all islands",
-            function(island_unlocker)
-                local oldcframe = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame
-                for _, v in pairs(game:GetService("Workspace").islandUnlockParts:GetChildren()) do
-                    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = v.CFrame
-                    wait(0.9)
-                end
-                wait(1)
-            end
-        )
 
         MainSection:NewToggle("Auto buy all swords","Auto buys all swords",
             function(v)
@@ -178,19 +171,36 @@ if 1 == 1 then--dont delete this -- ok -- lets go over here follow me ight
         )
         MainSection:NewToggle("Auto Rank","LocalPlayer auto ranks",
             function(auto)
-                local A_1 = "buyRank"
-                local A_2 = auto
-                game:GetService("Players").LocalPlayer.ninjaEvent = getgenv().buyRank
-                Event:FireServer(A_1,A_2)-- doesnt work
-            end
-        )                                                     
-        MiscSection:NewToggle("Max jumps","Gives jumps",-- ill teach u my code so what this does it is a toggle not a button so u can toggle on and off
+                getgenv().buyranks = auto
+                while true do 
+                    if not getgenv().buyranks then break end
+                         local Event = game:GetService("Players").LocalPlayer.ninjaEvent
+                         local rank = game:GetService("ReplicatedStorage").Ranks.Ground:GetChildren()
+                         for i = 1, #rank do
+                              Event:FireServer("buyRank", rank[i].Name)
+                         end
+                    wait(0.5)
+                end
+            end)                                                     
+        MiscSection:NewToggle("Max jumps","Gives jumps",
             function(v)
-              while wait(.0001) do
+              while wait(0.01) do
                game.Players.LocalPlayer.multiJumpCount.Value = "50"
                 end
             end
         )
+
+        MiscSection:NewButton("Unlock all islands","Unlocks all islands",
+            function(island_unlocker)
+                local oldcframe = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame
+                for _, v in pairs(game:GetService("Workspace").islandUnlockParts:GetChildren()) do
+                    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = v.CFrame
+                    wait(0.9)
+                end
+                wait(1)
+            end
+        )
+
         creds:NewButton("Copy discord invite","copies discord invite", -- this is a button so it doesnt repeat like a stupid developer it will copy it once for every x clicks
             function(v)
                 setclipboard("https://discord.gg/Aw7JCXewVS")
@@ -201,6 +211,12 @@ if 1 == 1 then--dont delete this -- ok -- lets go over here follow me ight
                 setclipboard("! ixzy#0900")
             end
         )
+
+        creds:NewButton("Scripter: BlueRock","Copies BlueRock's tag",
+            function(v)
+                setclipboard("BLUE ROCK#3750")
+            end
+        )    
         side_scripts:NewButton("Anti afk","wont let u get kicked",
             function(dont_kick)
                 wait(0.5)
@@ -338,10 +354,24 @@ if 1 == 1 then--dont delete this -- ok -- lets go over here follow me ight
             setclipboard("https://discord.gg/Aw7JCXewVS")
         end
     )
-     creds:NewButton("Scripter:Ixzy","copies ixzy's tag",
+     creds:NewButton("Scripter: Ixzy","copies ixzy's tag",
         function(v)
             setclipboard("! ixzy#0900")
         end
     )
+    creds:NewButton("Owner: Santa"," copies santa's tag",
+    function(Owner)
+        setclipboard("Santa#0800")
+    end)
+    creds:NewButton("Main Developer: Ixzy","Copies ixzy's tag",
+    function(v)
+        setclipboard("! ixzy#0900")
+    end)
+    creds:NewButton("Developer: BlueRock","Copies BlueRock's tag",
+    function(v)
+    setclipboard("BLUE ROCK#3750")
+    end
+)
+
 end
 end
