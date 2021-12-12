@@ -354,11 +354,6 @@ if 1 == 1 then--dont delete this -- ok
             setclipboard("https://discord.gg/Aw7JCXewVS")
         end
     )
-     creds:NewButton("Scripter: Ixzy","copies ixzy's tag",
-        function(v)
-            setclipboard("! ixzy#0900")
-        end
-    )
     creds:NewButton("Owner: Santa"," copies santa's tag",
     function(Owner)
         setclipboard("Santa#0800")
