@@ -8,4 +8,3 @@ local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/xHept
           function(evo)
             loadstring(game:HttpGet("https://projectevo.xyz/script/loader.lua"))()
           end)
-    end
