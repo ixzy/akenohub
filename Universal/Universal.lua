@@ -1,3 +1,5 @@
+local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/xHeptc/Kavo-UI-Library/main/source.lua"))()
+local Window = Library.CreateLib("AkenoHub-[Universal]", "Synapse")
 local Player = Window:NewTab("Player")
 local PlayerSection = Player:NewSection("Player")
 local credits = Window:NewTab("Credits")
