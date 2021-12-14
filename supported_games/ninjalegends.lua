@@ -1,5 +1,5 @@
 local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/xHeptc/Kavo-UI-Library/main/source.lua"))()
-        local Window = Library.CreateLib("AkenoHubV2-[Ninja Legends]", "Synapse")
+        local Window = Library.CreateLib("AkenoHub-[Ninja Legends]", "Synapse")
         local Main = Window:NewTab("Main")
         local MainSection = Main:NewSection("Main")
         local Misc = Window:NewTab("Misc")
