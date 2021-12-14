@@ -1,5 +1,5 @@
 local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/xHeptc/Kavo-UI-Library/main/source.lua"))()
-        local Window = Library.CreateLib("AkenoHubV2-[Prison-Life]", "Synapse")
+        local Window = Library.CreateLib("AkenoHub-[Prison-Life]", "Synapse")
      
         -- MAIN
         local Main = Window:NewTab("Main")
