@@ -63,9 +63,9 @@ PlayerSection:NewSlider("Jumppower","Changes the jumppower",250,50,
         game.Players.LocalPlayer.Character.Humanoid.JumpPower = v
     end
 )
-creds:NewButton("Owner: Santa","copies santa's tag",
+creds:NewButton("Owner: Suby","copies suby's tag",
 function(v)
-    setclipboard("Santa#0800")
+    setclipboard("suby#2869")
 end)
 creds:NewButton("Main Developer: Ixzy","copies ixy's tag",
     function(v)
