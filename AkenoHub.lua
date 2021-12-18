@@ -39,4 +39,4 @@ else
   notify("Akeno Hub", "Loading Universal script", 6)  
   wait(2)
   loadstring(game:HttpGet('https://raw.githubusercontent.com/ixzy/akenohub/main/Universal/Universal.lua'))()
- end--loader end
+ end
