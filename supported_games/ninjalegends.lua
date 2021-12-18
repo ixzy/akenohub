@@ -167,3 +167,23 @@ local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/xHept
                 end
             end
         )
+creds:NewButton("Owner: Suby","copies suby's tag",
+function(v)
+    setclipboard("suby#2869")
+end)
+creds:NewButton("Main Developer: Ixzy","copies ixy's tag",
+    function(v)
+        setclipboard("! ixzy#0900")
+    end
+)
+        
+creds:NewButton("Developer: BlueRock","Copies BlueRock's tag",
+     function(v)
+        setclipboard("BLUE ROCK#3750")
+    end
+)
+creds:NewButton("Copy discord invite","copies discord invite",
+    function(v)
+        setclipboard("https://discord.gg/Aw7JCXewVS")
+    end
+)
