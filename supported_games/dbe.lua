@@ -13,7 +13,7 @@ if table.find(supported_games,game.PlaceId) then--dont delete this -- ok
   if game.PlaceId == 5324597737  then
   notify("Akeno Hub", "Loading Dragon Ball Evolution", 6) 
   wait(2)
-  loadstring(game:HttpGet('https://raw.githubusercontent.com/ixzy/akenohub/main/supported_games/dbe.lua'))
+  loadstring(game:HttpGet('https://raw.githubusercontent.com/ixzy/akenohub/main/supported_games/dbe.lua'))()
   end
   if game.PlaceId == 3956818381 then
   notify("Akeno Hub", "Loading Ninja Legends", 6)   
