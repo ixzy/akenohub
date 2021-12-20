@@ -1,42 +1,85 @@
---notification start--
-local supported_games = {3956818381,5324597737,292439477,155615604,6875469709}--dont delete this
-
-if table.find(supported_games,game.PlaceId) then--dont delete this -- ok 
-  function notify(Title,Text,Duration)
-      game.StarterGui:SetCore("SendNotification", {
-          Title = Title,
-          Text = Text,
-          Duration = tonumber(Duration)
-      })
-  end
-  --loader start--
-  if game.PlaceId == 5324597737  then
-  notify("Akeno Hub", "Loading Dragon Ball Evolution", 6) 
-  wait(2)
-  loadstring(game:HttpGet('https://raw.githubusercontent.com/ixzy/akenohub/main/supported_games/dbe.lua'))()
-  end
-  if game.PlaceId == 3956818381 then
-  notify("Akeno Hub", "Loading Ninja Legends", 6)   
-  wait(2)
-  loadstring(game:HttpGet('https://raw.githubusercontent.com/ixzy/akenohub/main/supported_games/ninjalegends.lua'))()
-  end
-  if game.PlaceId == 292439477 then
-  notify("Akeno Hub", "Loading Phantom Forces", 6)  
-  wait(2)
-  loadstring(game:HttpGet('https://raw.githubusercontent.com/ixzy/akenohub/main/supported_games/phantomforces.lua'))()
-  end
-  if game.PlaceId == 155615604 then
-  notify("Akeno Hub", "Loading Prison Life", 6)
-  wait(2)
-  loadstring(game:HttpGet('https://raw.githubusercontent.com/ixzy/akenohub/main/supported_games/prisonlife.lua'))()
-  end
-  if game.PlaceId == 6875469709 then
-    notify("Akeno Hub", "Loading Strongest Punch Simulator",6)
-       loadstring(game:HttpGet('https://raw.githubusercontent.com/ixzy/akenohub/main/supported_games/StrongestPunchSim.lua'))()
-  end
-
-else
-  notify("Akeno Hub", "Loading Universal script", 6)  
-  wait(2)
-  loadstring(game:HttpGet('https://raw.githubusercontent.com/ixzy/akenohub/main/Universal/Universal.lua'))()
- end
+local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/xHeptc/Kavo-UI-Library/main/source.lua"))()
+local Window = Library.CreateLib("AkenoHub-[DBE]", "Synapse")
+-- MAIN
+local Main = Window:NewTab("Main")
+local MainSection = Main:NewSection("Main")
+local original_level = game:GetService("Players").LocalPlayer.Stats.Level.Value
+MainSection:NewSlider("Level","Changes the LocalPlayers level",10000000999999999999999999999999,original_level, 
+    function(v)
+        game:GetService("Players").LocalPlayer.Stats.Level.Value = v
+    end
+)-- this is a slider it slides values
+MainSection:NewSlider("Health Max","Changes the LocalPlayers HealthMax",1000000,1,
+    function(v)
+        game:GetService("Players").LocalPlayer.Stats.HealthMax.Value = v
+    end
+)
+MainSection:NewSlider("KiDamage","Changes the LocalPlayers KiDamage",10000000,1,
+    function(v)
+        game:GetService("Players").LocalPlayer.Stats.KiDamage.Value = v
+    end
+)
+MainSection:NewSlider("KiMax","Changes the LocalPlayers KiMax",10000000,1,
+    function(v)
+        game:GetService("Players").LocalPlayer.Stats.KiMax.Value = v
+    end
+)
+MainSection:NewSlider("KiResistance","Changes the LocalPlayers KiResistance",10000000,1,
+    function(v)
+        game:GetService("Players").LocalPlayer.Stats.KiResistance.Value = v
+    end
+)
+MainSection:NewSlider("MeleeDamage","Changes the LocalPlayers MeleeDamage",10000000,1,
+    function(v)
+        game:GetService("Players").LocalPlayer.Stats.MeleeDamage.Value = v
+    end
+)
+MainSection:NewSlider("Speed","Changes the LocalPlayers Speed",10000000,250,
+    function(v)
+        game:GetService("Players").LocalPlayer.Stats.Speed.Value = v
+    end)
+MainSection:NewSlider("Power Level","ez pz",10000000999999999999999999999999999999999999999999999999999999999999999999999999999999999999, 1,
+   function(pl)
+    game:GetService("Players").localplayer.PlayerGui.NewMain.PowerLevel.Text = "Current Power Level:"..pl
+   end
+)
+MainSection:NewSlider("SkillPoints","SkillPoints", 100000009999999999999999999999,original_level,
+   function(SkillPoints)
+    game:GetService("Players").LocalPlayer.Stats.SkillPoint.Value = SkillPoints
+   end
+)
+-- PLAYER
+local Player = Window:NewTab("Player")
+local PlayerSection = Player:NewSection("Player")
+local credits = Window:NewTab("Credits")
+local creds = credits:NewSection("Credits")
+PlayerSection:NewSlider("Walkspeed","Changes the walkspeed",250,16,
+    function(v)
+        game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = v
+    end
+)
+PlayerSection:NewSlider("Jumppower","Changes the jumppower",250,50,
+    function(v)
+        game.Players.LocalPlayer.Character.Humanoid.JumpPower = v
+    end
+)
+creds:NewButton("Owner: Suby","copies suby's tag",
+function(v)
+    setclipboard("suby#2869")
+end)
+creds:NewButton("Main Developer: Ixzy","copies ixy's tag",
+    function(v)
+        setclipboard("! ixzy#0900")
+    end
+)
+        
+creds:NewButton("Developer: BlueRock","Copies BlueRock's tag",
+     function(v)
+        setclipboard("BLUE ROCK#3750")
+    end
+)
+creds:NewButton("Copy discord invite","copies discord invite",
+    function(v)
+        setclipboard("https://discord.gg/Aw7JCXewVS")
+    end
+)
