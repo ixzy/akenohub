@@ -8,6 +8,7 @@ if table.find(supported_games,game.PlaceId) then--dont delete this -- ok
           Text = Text,
           Duration = tonumber(Duration)
       })
+  end
   --loader start--
   if game.PlaceId == 5324597737  then
   notify("Akeno Hub", "Loading Dragon Ball Evolution", 6) 
