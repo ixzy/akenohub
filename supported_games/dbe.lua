@@ -4,6 +4,9 @@ local Window = Library.CreateLib("AkenoHub-[DBE]", "Synapse")
 local Main = Window:NewTab("Main")
 local MainSection = Main:NewSection("Main")
 local original_level = game:GetService("Players").LocalPlayer.Stats.Level.Value
+MainSection:NewKeybind("KeybindText", "KeybindInfo", Enum.KeyCode.F4, function()
+	Library:ToggleUI()
+end)
 MainSection:NewSlider("Level","Changes the LocalPlayers level",10000000999999999999999999999999,original_level, 
     function(v)
         game:GetService("Players").LocalPlayer.Stats.Level.Value = v
