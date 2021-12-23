@@ -56,6 +56,9 @@ local Player = Window:NewTab("Player")
 local PlayerSection = Player:NewSection("Player")
 local credits = Window:NewTab("Credits")
 local creds = credits:NewSection("Credits")
+local ke = window:NewTab("KeyBinds")
+local keybinds = ke:NewSection("KeyBind")
+
 PlayerSection:NewSlider("Walkspeed","Changes the walkspeed",250,16,
     function(v)
         game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = v
@@ -66,6 +69,9 @@ PlayerSection:NewSlider("Jumppower","Changes the jumppower",250,50,
         game.Players.LocalPlayer.Character.Humanoid.JumpPower = v
     end
 )
+MainSection:NewKeybind("KeybindText", "KeybindInfo", Enum.KeyCode.F4, function()
+	Library:ToggleUI()
+end)
 creds:NewButton("Owner: Suby","copies suby's tag",
 function(v)
     setclipboard("suby#2869")
