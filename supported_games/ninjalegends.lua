@@ -8,6 +8,9 @@ local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/xHept
         local party = prty:NewSection("Party")
         local sd = Window:NewTab("SS")
         local side_scripts = sd:NewSection("Side scripts")
+        local ke = Window:NewTab("KeyBinds")
+        local keybinds = ke:NewSection("KeyBind")
+        end)
         local credits = Window:NewTab("Credits")
         local creds = credits:NewSection("Credits")
         MainSection:NewToggle("Auto Swing","Make your player autoswing",
@@ -167,6 +170,12 @@ local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/xHept
                 end
             end
         )
+
+
+ keybinds:NewKeybind("KeybindText", "KeybindInfo", Enum.KeyCode.Minus,
+function()
+   Library:ToggleUI()
+end)
 creds:NewButton("Owner: Suby","copies suby's tag",
 function(v)
     setclipboard("suby#2869")
