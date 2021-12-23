@@ -54,10 +54,11 @@ MainSection:NewSlider("SkillPoints","SkillPoints", 10000000999999999999999999999
 -- PLAYER
 local Player = Window:NewTab("Player")
 local PlayerSection = Player:NewSection("Player")
-local credits = Window:NewTab("Credits")
-local creds = credits:NewSection("Credits")
 local ke = window:NewTab("KeyBinds")
 local keybinds = ke:NewSection("KeyBind")
+local credits = Window:NewTab("Credits")
+local creds = credits:NewSection("Credits")
+
 
 PlayerSection:NewSlider("Walkspeed","Changes the walkspeed",250,16,
     function(v)
