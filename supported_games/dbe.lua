@@ -4,9 +4,6 @@ local Window = Library.CreateLib("AkenoHub-[DBE]", "Synapse")
 local Main = Window:NewTab("Main")
 local MainSection = Main:NewSection("Main")
 local original_level = game:GetService("Players").LocalPlayer.Stats.Level.Value
-MainSection:NewKeybind("KeybindText", "KeybindInfo", Enum.KeyCode.F4, function()
-	Library:ToggleUI()
-end)
 MainSection:NewSlider("Level","Changes the LocalPlayers level",10000000999999999999999999999999,original_level, 
     function(v)
         game:GetService("Players").LocalPlayer.Stats.Level.Value = v
@@ -54,12 +51,10 @@ MainSection:NewSlider("SkillPoints","SkillPoints", 10000000999999999999999999999
 -- PLAYER
 local Player = Window:NewTab("Player")
 local PlayerSection = Player:NewSection("Player")
-local ke = window:NewTab("KeyBinds")
+local ke = Window:NewTab("KeyBinds")
 local keybinds = ke:NewSection("KeyBind")
 local credits = Window:NewTab("Credits")
 local creds = credits:NewSection("Credits")
-
-
 PlayerSection:NewSlider("Walkspeed","Changes the walkspeed",250,16,
     function(v)
         game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = v
@@ -70,7 +65,7 @@ PlayerSection:NewSlider("Jumppower","Changes the jumppower",250,50,
         game.Players.LocalPlayer.Character.Humanoid.JumpPower = v
     end
 )
-keybinds:NewKeybind("KeybindText", "KeybindInfo", Enum.KeyCode.F4, function()
+keybinds:NewKeybind("KeybindText", "KeybindInfo", Enum.KeyCode.Minus, function()
 	Library:ToggleUI()
 end)
 creds:NewButton("Owner: Suby","copies suby's tag",
