@@ -52,6 +52,12 @@ local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/xHept
         
          end
         )
+        --KeyBinds
+         local ke = Window:NewTab("KeyBinds")
+         local keybinds = ke:NewSection("KeyBind")
+         keybinds:NewKeybind("KeybindText", "KeybindInfo", Enum.KeyCode.Minus, function()
+	Library:ToggleUI()
+        end)
         -- CREDITS
         local credits = Window:NewTab("Credits")
         local creds = credits:NewSection("Credits")
