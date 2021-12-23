@@ -69,7 +69,7 @@ PlayerSection:NewSlider("Jumppower","Changes the jumppower",250,50,
         game.Players.LocalPlayer.Character.Humanoid.JumpPower = v
     end
 )
-MainSection:NewKeybind("KeybindText", "KeybindInfo", Enum.KeyCode.F4, function()
+keybinds:NewKeybind("KeybindText", "KeybindInfo", Enum.KeyCode.F4, function()
 	Library:ToggleUI()
 end)
 creds:NewButton("Owner: Suby","copies suby's tag",
