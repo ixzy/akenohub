@@ -1,4 +1,4 @@
-local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/xHeptc/Kavo-UI-Library/main/source.lua"))()
+        local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/xHeptc/Kavo-UI-Library/main/source.lua"))()
         local Window = Library.CreateLib("AkenoHub-[Ninja Legends]", "Synapse")
         local Main = Window:NewTab("Main")
         local MainSection = Main:NewSection("Main")
@@ -10,7 +10,6 @@ local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/xHept
         local side_scripts = sd:NewSection("Side scripts")
         local ke = Window:NewTab("KeyBinds")
         local keybinds = ke:NewSection("KeyBind")
-        end)
         local credits = Window:NewTab("Credits")
         local creds = credits:NewSection("Credits")
         MainSection:NewToggle("Auto Swing","Make your player autoswing",
