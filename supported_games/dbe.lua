@@ -53,11 +53,11 @@ MainSection:NewSlider("SkillPoints","SkillPoints", 10000000999999999999999999999
 TechSection:NewButton("Uit","gives uit in inventory", 
   function(ui)
      game:GetService("Players").LocalPlayer.Skills.SkillK.Value = "Ultra Instinct"
-  end
+  end)
 TechSection:NewButton("Kaioken","gives Kaioken in inventory", 
   function(ui)
      game:GetService("Players").LocalPlayer.Skills.SkillK.Value = "Kaioken"
-  end
+  end)
 -- PLAYER
 local Player = Window:NewTab("Player")
 local PlayerSection = Player:NewSection("Player")
