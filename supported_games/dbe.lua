@@ -3,6 +3,8 @@ local Window = Library.CreateLib("AkenoHub-[DBE]", "Synapse")
 -- MAIN
 local Main = Window:NewTab("Main")
 local MainSection = Main:NewSection("Main")
+local Technique = Main:NewTab("Tech")
+local TechSection = Technique:NewSection("Technique")
 local original_level = game:GetService("Players").LocalPlayer.Stats.Level.Value
 MainSection:NewSlider("Level","Changes the LocalPlayers level",10000000999999999999999999999999,original_level, 
     function(v)
@@ -48,6 +50,14 @@ MainSection:NewSlider("SkillPoints","SkillPoints", 10000000999999999999999999999
     game:GetService("Players").LocalPlayer.Stats.SkillPoint.Value = SkillPoints
    end
 )
+TechSection:NewButton("Uit","gives uit in inventory", 
+  function(ui)
+     game:GetService("Players").LocalPlayer.Skills.SkillK.Value = "Ultra Instinct"
+  end
+TechSection:NewButton("Kaioken","gives Kaioken in inventory", 
+  function(ui)
+     game:GetService("Players").LocalPlayer.Skills.SkillK.Value = "Kaioken"
+  end
 -- PLAYER
 local Player = Window:NewTab("Player")
 local PlayerSection = Player:NewSection("Player")
