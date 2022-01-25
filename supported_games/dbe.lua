@@ -1,9 +1,9 @@
 local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/xHeptc/Kavo-UI-Library/main/source.lua"))()
 local Window = Library.CreateLib("AkenoHub-[DBE]", "Synapse")
 -- MAIN
+local original_level = game:GetService("Players").LocalPlayer.Stats.Level.Value
 local Main = Window:NewTab("Main")
 local MainSection = Main:NewSection("Main")
-local original_level = game:GetService("Players").LocalPlayer.Stats.Level.Value
 MainSection:NewSlider("Level","Changes the LocalPlayers level",10000000999999999999999999999999,original_level, 
     function(v)
         game:GetService("Players").LocalPlayer.Stats.Level.Value = v
